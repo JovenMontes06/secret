@@ -294,7 +294,7 @@ function cambiarImagen(url){
     img += 1;
     if(img>22){img=1;}
 }
-const secreto = "t_tl_tttttt_yi_odcls_xfex0fuw_jxjxw_ko";
+const secreto = "t_tttttt_tl_yi_odcls_xfex0fuw_jxjxw_ko";
 let temporal = "";
 
 document.addEventListener("keydown", (evento) => {
