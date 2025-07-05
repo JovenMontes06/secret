@@ -294,72 +294,67 @@ function cambiarImagen(url){
     img += 1;
     if(img>22){img=1;}
 }
-let codigoSecreto = "tttttt_t_l_yi_odcls_xfex0fuw_jxjxw_ko"; // Puedes cambiarlo
-let buffer = "";
+const secreto = "tttttt_t_tl_yi_odcls_xfex0fuw_jxjxw_ko";
+let temporal = "";
 
-document.addEventListener("keydown", (e) => {
-    const teclaPresionada = e.key;
-    const letraTraducida = mapa[teclaPresionada];
+document.addEventListener("keydown", (evento) => {
+  const tecla = evento.key;
+  const valor = mapaConversion[tecla];
 
-    if (letraTraducida) {
-        buffer += letraTraducida;
+  if (valor) {
+    temporal += valor;
 
-        // Limita el tamaño del buffer al tamaño del código secreto
-        if (buffer.length > codigoSecreto.length) {
-            buffer = buffer.slice(-codigoSecreto.length);
-        }
-
-        if (buffer === codigoSecreto) {
-            iniciarPrograma();
-            document.title = "Eres <3"
-        }
-    } else {
-        // Si no está en el diccionario, reinicia el buffer (opcional)
-        // buffer = "";
+    if (temporal.length > secreto.length) {
+      temporal = temporal.slice(-secreto.length);
     }
+
+    if (temporal === secreto) {
+      ejecutar();
+      document.title = "Eres <3";
+    }
+  }
 });
 
-    function iniciarPrograma() {
-    // Oculta el div de bloqueo
-    document.getElementById("pantallaBloqueo").style.display = "none";
-    }
+function ejecutar() {
+  document.getElementById("area1").style.display = "none";
+}
 
-const mapa = {
-    "a": String.fromCharCode(120), // x
-    "b": String.fromCharCode(106), // j
-    "c": String.fromCharCode(53),  // 5
-    "d": String.fromCharCode(57),  // 9
-    "e": String.fromCharCode(107), // k
-    "f": String.fromCharCode(51),  // 3
-    "g": String.fromCharCode(113), // q
-    "h": String.fromCharCode(49),  // 1
-    "i": String.fromCharCode(117), // u
-    "j": String.fromCharCode(55),  // 7
-    "k": String.fromCharCode(112), // p
-    "l": String.fromCharCode(101), // e
-    "m": String.fromCharCode(122), // z
-    "n": String.fromCharCode(48),  // 0
-    "o": String.fromCharCode(98),  // b
-    "p": String.fromCharCode(54),  // 6
-    "q": String.fromCharCode(97),  // a
-    "r": String.fromCharCode(52),  // 4
-    "s": String.fromCharCode(119), // w
-    "t": String.fromCharCode(102), // f
-    "u": String.fromCharCode(103), // g
-    "v": String.fromCharCode(50),  // 2
-    "w": String.fromCharCode(118), // v
-    "x": String.fromCharCode(110), // n
-    "y": String.fromCharCode(56),  // 8
-    "z": String.fromCharCode(109), // m
-    "0": String.fromCharCode(116), // t
-    "1": String.fromCharCode(99),  // c
-    "2": String.fromCharCode(121), // y
-    "3": String.fromCharCode(104), // h
-    "4": String.fromCharCode(115), // s
-    "5": String.fromCharCode(111), // o
-    "6": String.fromCharCode(114), // r
-    "7": String.fromCharCode(108), // l
-    "8": String.fromCharCode(100), // d
-    "9": String.fromCharCode(105),  // i
-    "_": "_"
+const mapaConversion = {
+  "a": String.fromCharCode(120),
+  "b": String.fromCharCode(106),
+  "c": String.fromCharCode(53),
+  "d": String.fromCharCode(57),
+  "e": String.fromCharCode(107),
+  "f": String.fromCharCode(51),
+  "g": String.fromCharCode(113),
+  "h": String.fromCharCode(49),
+  "i": String.fromCharCode(117),
+  "j": String.fromCharCode(55),
+  "k": String.fromCharCode(112),
+  "l": String.fromCharCode(101),
+  "m": String.fromCharCode(122),
+  "n": String.fromCharCode(48),
+  "o": String.fromCharCode(98),
+  "p": String.fromCharCode(54),
+  "q": String.fromCharCode(97),
+  "r": String.fromCharCode(52),
+  "s": String.fromCharCode(119),
+  "t": String.fromCharCode(102),
+  "u": String.fromCharCode(103),
+  "v": String.fromCharCode(50),
+  "w": String.fromCharCode(118),
+  "x": String.fromCharCode(110),
+  "y": String.fromCharCode(56),
+  "z": String.fromCharCode(109),
+  "0": String.fromCharCode(116),
+  "1": String.fromCharCode(99),
+  "2": String.fromCharCode(121),
+  "3": String.fromCharCode(104),
+  "4": String.fromCharCode(115),
+  "5": String.fromCharCode(111),
+  "6": String.fromCharCode(114),
+  "7": String.fromCharCode(108),
+  "8": String.fromCharCode(100),
+  "9": String.fromCharCode(105),
+  "_": "_"
 };
