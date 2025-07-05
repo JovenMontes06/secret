@@ -316,7 +316,7 @@ document.addEventListener("keydown", (evento) => {
 });
 
 function ejecutar() {
-  document.getElementById("area1").style.display = "none";
+  document.getElementById("pantallaBloqueo").style.display = "none";
 }
 
 const mapaConversion = {
